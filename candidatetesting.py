@@ -1,8 +1,6 @@
 # TODO 2: modify your quiz app to ask 5 questions
 
-# TODO 1.1a: Define candidateName
-candidate_name = ""
-# TODO 1.2a: Define question, correctAnswer, and candidateAnswer
+# TODO 1.2a: Assign question, correct_answer, and candidate_answer
 question = ""
 correct_answer = ""
 candidate_answer = ""
@@ -12,7 +10,7 @@ candidate_answers = ""
 
 
 def ask_for_name():
-  # TODO 1.1b: Ask for candidate's name
+  # TODO 1.1: Ask for candidate's name
   return "What is your name?"
 
 def ask_question():
@@ -32,7 +30,7 @@ def grade_quiz(candidate_answers):
 
 def run_program():
   ask_for_name()
-  # TODO 1.1c: Ask for candidate's name
+  # TODO 1.1b: Ask for candidate's name and greet them by their name
   
-  askQuestion()
-  # gradeQuiz(this.candidateAnswers)
+  ask_question()
+  # gradeQuiz(candidate_answers)
