@@ -43,27 +43,108 @@ class TestCandidateQuiz(unittest.TestCase):
    def test_quiz_contains_5(self):
       self.assertEqual(len(questions), 5)
 
-   def trailing_spaces(self):
-      
+   def test_quiz_contains_question_1(self):
+      test = "^(?:W|w)ho was the first (?:A|a)merican woman in space\? "
+      question_check = False
       for q in questions:
-         check = re.findall(" $", q)
-         self.assertTrue(check)
+         check = re.search(test, q)
+         if check:
+            question_check = True
+      
+      self.assertTrue(question_check)
 
-      # self.assertIn(questions, "Who was the first American woman in space? ")
-      # self.assertIn(questions, "True or false: 5 kilometer == 5000 meters? ")
-      # self.assertIn(questions, "(5 + 3)/2 * 10 = ? ")
-      # self.assertIn(questions, "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ")
-      # self.assertIn(questions, "What is the minimum crew size for the ISS? ")
+   def test_quiz_contains_question_2(self):
+      test = "^(?:T|t)rue or false: 5 kilometer == 5000 meters\? "
+      question_check = False
+      for q in questions:
+         check = re.search(test, q)
+         if check:
+            question_check = True
+      
+      self.assertTrue(question_check)
+
+   def test_quiz_contains_question_3(self):
+      test = "\(5 + 3\)/2 \* 10 = \? "
+      question_check = False
+      for q in questions:
+         check = re.search(test, q)
+         if check:
+            question_check = True
+      
+      self.assertTrue(question_check)
+
+   def test_quiz_contains_question_4(self):
+      test = "^(?:G|g)iven the array \[8, 'Orbit', 'Trajectory', 45\], what entry is at index 2\? "
+      question_check = False
+      for q in questions:
+         check = re.search(test, q)
+         if check:
+            question_check = True
+      
+      self.assertTrue(question_check)   
+
+   def test_quiz_contains_question_5(self):
+      test = "^(?:W|w)hat is the minimum crew size for the (?:I|i)(?:S|s)(?:S|s)\? "
+      question_check = False
+      for q in questions:
+         check = re.search(test, q)
+         if check:
+            question_check = True
+      
+      self.assertTrue(question_check)
 
    def test_correct_answers_contains_5(self):
       self.assertEqual(len(correct_answers), 5)
 
-   def test_correct_answers_is_correct(self):
-      self.assertIn("Sally Ride", correct_answers)
-      self.assertIn("true", correct_answers)
-      self.assertIn("40", correct_answers)
-      self.assertIn("Trajectory", correct_answers)
-      self.assertIn("3", correct_answers)
+   def test_quiz_contains_answer_1(self):
+      test = "^(?:S|s)ally.(?:R|r)ide$"
+      answer_check = False
+      for a in correct_answers:
+         check = re.search(test, a)
+         if check:
+            answer_check = True
+      
+      self.assertTrue(answer_check)
+
+   def test_quiz_contains_answer_2(self):
+      test = "^(?:T|t)rue"
+      answer_check = False
+      for a in correct_answers:
+         check = re.search(test, a)
+         if check:
+            answer_check = True
+      
+      self.assertTrue(answer_check)
+
+   def test_quiz_contains_answer_3(self):
+      test = "40"
+      answer_check = False
+      for a in correct_answers:
+         check = re.search(test, a)
+         if check:
+            answer_check = True
+      
+      self.assertTrue(answer_check)
+
+   def test_quiz_contains_answer_4(self):
+      test = "^(?:T|t)rajectory"
+      answer_check = False
+      for a in correct_answers:
+         check = re.search(test, a)
+         if check:
+            answer_check = True
+      
+      self.assertTrue(answer_check)
+
+   def test_quiz_contains_answer_5(self):
+      test = "3"
+      answer_check = False
+      for a in correct_answers:
+         check = re.search(test, a)
+         if check:
+            answer_check = True
+      
+      self.assertTrue(answer_check)
 
    # PART 3
    # gradeQuiz tests
