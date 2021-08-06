@@ -75,7 +75,7 @@ class TestCandidateQuiz(unittest.TestCase):
       self.assertTrue(question_check)
 
    def test_quiz_contains_question_4(self):
-      test = "^(?:G|g)iven the array \[8, 'Orbit', 'Trajectory', 45\], what entry is at index 2\? "
+      test = "^(?:G|g)iven the list \[8, 'Orbit', 'Trajectory', 45\], what entry is at index 2\? "
       question_check = False
       for q in questions:
          check = re.search(test, q)
