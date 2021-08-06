@@ -14,7 +14,7 @@ def ask_for_name():
   return "What is your name?"
 
 def ask_question():
-  # TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer
+  # TODO 1.2b: Ask candidate the question and assign the response as candidate_answer
   return "Hello"
 
 def grade_quiz(candidate_answers):
