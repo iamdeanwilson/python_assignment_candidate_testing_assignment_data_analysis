@@ -64,7 +64,8 @@ class TestCandidateQuiz(unittest.TestCase):
       self.assertTrue(question_check)
 
    def test_quiz_contains_question_3(self):
-      test = "\(5 + 3\)/2 \* 10 = \? "
+      # (5 + 3)/2 * 10 = ? 
+      test = "\(5 \+ 3\)/2 \* 10 = \? "
       question_check = False
       for q in questions:
          check = re.search(test, q)
